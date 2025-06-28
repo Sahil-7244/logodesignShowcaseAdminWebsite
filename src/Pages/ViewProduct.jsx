@@ -19,7 +19,7 @@ function ViewProduct() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/user/getproducts`
+        `https://logodesignshowcasebackend-5.onrender.com/user/getproducts`
       );
       setData(response.data.products);
 
@@ -38,7 +38,7 @@ function ViewProduct() {
 
   const handleDelete = async (productId) => {
     try {
-      await axios.post(`http://localhost:8000/admin/deleteProducts`, {
+      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/admin/deleteProducts`, {
         productId,
       });
       toast.success("Product Deleted Successfully!!", {

@@ -10,7 +10,7 @@ function ViewServicebgbanner() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post(`http://localhost:8000/viewServicebgImg`);
+      const response = await axios.post(`https://logodesignshowcasebackend-5.onrender.com/viewServicebgImg`);
       setData(response.data.servicebgImg);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -25,7 +25,7 @@ function ViewServicebgbanner() {
 
   const handleDelete = async (servicebgImgId) => {
     try {
-      await axios.post(`http://localhost:8000/admin/deleteservicebgbanner`, {
+      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/admin/deleteservicebgbanner`, {
         servicebgImgId
       });
       toast.success("servicebgImg Deleted Successfully!!", {

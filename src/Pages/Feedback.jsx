@@ -14,7 +14,7 @@ function Feedback() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/user/gethistory`);
+      const response = await axios.get(`https://logodesignshowcasebackend-5.onrender.com/user/gethistory`);
       setRecords(response.data.data);
       setOriginalData(response.data.data);
     } catch (error) {

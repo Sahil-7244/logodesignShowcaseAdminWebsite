@@ -10,7 +10,7 @@ function ViewCarouselImg() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/viewCarouselImg`);
+      const response = await axios.get(`https://logodesignshowcasebackend-5.onrender.com/viewCarouselImg`);
       setData(response.data.carouselImg);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -25,7 +25,7 @@ function ViewCarouselImg() {
 
   const handleDelete = async (carouselImgId) => {
     try {
-      await axios.post(`http://localhost:8000/admin/deleteCarouselImg`, {
+      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/admin/deleteCarouselImg`, {
         carouselImgId
       });
       toast.success("carouselImg Deleted Successfully!!", {

@@ -68,7 +68,7 @@ function AddProduct() {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/addProducts`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/addProducts`,
         formData
       );
 

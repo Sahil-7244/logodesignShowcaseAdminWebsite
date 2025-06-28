@@ -45,7 +45,7 @@ const [isLoaded,setIsloded] = useState(true);
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/addCarouselImg`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/addCarouselImg`,
         formData
       );
       if (response.data.success) {

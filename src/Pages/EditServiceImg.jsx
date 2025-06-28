@@ -46,7 +46,7 @@ function EditServiceImg() {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/editServiceImg`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/editServiceImg`,
         formData
       );
       if (response.data.success) {

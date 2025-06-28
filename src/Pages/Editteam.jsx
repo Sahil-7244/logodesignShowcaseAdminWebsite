@@ -47,7 +47,7 @@ function EditTeamMember() {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/editteam`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/editteam`,
         formData
       );
       if (response.data.success) {

@@ -45,7 +45,7 @@ function AddServicebgbanner() {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/AddServicebgbanner`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/AddServicebgbanner`,
         formData
       );
       if (response.data.success) {

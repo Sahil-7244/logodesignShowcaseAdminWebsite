@@ -46,7 +46,7 @@ function EditServicebgbanner() {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/editServicebgImg`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/editServicebgImg`,
         formData
       );
       if (response.data.success) {

@@ -35,7 +35,7 @@ function Sidebar() {
 
   const handleLogout = async () => {
     try {
-      await axios.post(`http://localhost:8000/logout`);
+      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/logout`);
       window.location.reload();
     } catch (error) {
       toast.error(error.response.data.message, {

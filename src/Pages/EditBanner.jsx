@@ -49,7 +49,7 @@ function EditBanner() {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/editBanner`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/editBanner`,
         formData
       );
       if (response.data.success) {

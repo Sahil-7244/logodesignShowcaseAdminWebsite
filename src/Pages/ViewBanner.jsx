@@ -10,7 +10,7 @@ function ViewBanner() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/user/getBanner`);
+      const response = await axios.get(`https://logodesignshowcasebackend-5.onrender.com/user/getBanner`);
       setData(response.data.banners);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -25,7 +25,7 @@ function ViewBanner() {
 
   const handleDelete = async (bannerId) => {
     try {
-      await axios.post(`http://localhost:8000/admin/deleteBanner`, {
+      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/admin/deleteBanner`, {
         bannerId,
       });
       toast.success("Banner Deleted Successfully!!", {

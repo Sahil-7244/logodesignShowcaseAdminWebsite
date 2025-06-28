@@ -73,7 +73,7 @@ let maxLength = 100;
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/EditProducts`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/EditProducts`,
         formData
       );
 

@@ -45,7 +45,7 @@ function AddServiceImg() {
     }
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/AddServiceImg`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/AddServiceImg`,
         formData
       );
       if (response.data.success) {

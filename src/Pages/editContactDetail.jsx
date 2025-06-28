@@ -26,7 +26,7 @@ function EditContactDetails() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:8000/admin/editContact`,
+        `https://logodesignshowcasebackend-5.onrender.com/admin/editContact`,
         data
       );
       if (response.data.success) {
