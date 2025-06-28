@@ -38,18 +38,18 @@ function App() {
   axios.defaults.withCredentials = true;
 
   //for checking session
+  const authenticateUser = async () => {
+    // Call checkSession to determine if user is authenticated
+    try {
+      const isAuthenticated = await checkSession();
+      setIsAuthenticated(isAuthenticated);
+    } catch (error) {
+      setIsAuthenticated(false);
+    } finally {
+      setLoading(false); // Set loading to false after authentication check
+    }
+  };
   useEffect(() => {
-    const authenticateUser = async () => {
-      // Call checkSession to determine if user is authenticated
-      try {
-        const isAuthenticated = await checkSession();
-        setIsAuthenticated(isAuthenticated);
-      } catch (error) {
-        setIsAuthenticated(false);
-      } finally {
-        setLoading(false); // Set loading to false after authentication check
-      }
-    };
     authenticateUser();
   }, []);
 
@@ -64,7 +64,7 @@ function App() {
             <Routes>
               <Route
                 path="/login"
-                element={!isAuthenticated ? <Login /> : <Navigate to="/" />}
+                element={!isAuthenticated ? <Login  /> : <Navigate to="/" />}
               />
               <Route
                 path="/"
