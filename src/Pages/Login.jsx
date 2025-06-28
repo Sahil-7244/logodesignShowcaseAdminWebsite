@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 
-function Login() {
+function Login(props) {
   // const [showPassword, setShowPassword] = useState(false);
   const [data, setData] = useState({
     email: "",
@@ -26,6 +26,7 @@ function Login() {
         autoClose: 1500,
         onClose: () => window.location.reload(true),
       });
+      props.authenticateUser()
     } catch (error) {
       console.log("Login Err: ", error);
       console.log(error.response.data);
