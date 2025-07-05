@@ -21,7 +21,7 @@ function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/user/login`, data);
+      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/user/login`, data, { withCredentials: true });
       toast.success("Login Succesfully!!", {
         autoClose: 1500,
         onClose: () => window.location.reload(true),
