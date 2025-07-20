@@ -24,7 +24,7 @@ function Login(props) {
       await axios.post(`https://logodesignshowcasebackend-5.onrender.com/user/login`, data, { withCredentials: true });
       toast.success("Login Succesfully!!", {
         autoClose: 1500,
-        onClose: () => window.location.reload(true),
+        // onClose: () => window.location.reload(true),
       });
       props.authenticateUser()
     } catch (error) {

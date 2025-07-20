@@ -10,6 +10,7 @@ const checkSession = async () => {
     await axios.post(`https://logodesignshowcasebackend-5.onrender.com/session`,{},{withCredentials: true});
     return true; // Session is valid
   } catch (error) {
+    console.log("Session check failedddd: ", error);
     return false; // Session is not valid
   }
 };

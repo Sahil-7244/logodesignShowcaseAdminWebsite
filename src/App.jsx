@@ -34,7 +34,6 @@ import EditExperience from "./Pages/editexperience";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [loading, setLoading] = useState(true); // New loading state
   axios.defaults.withCredentials = true;
 
   //for checking session
@@ -45,19 +44,10 @@ function App() {
       setIsAuthenticated(isAuthenticated);
     } catch (error) {
       setIsAuthenticated(false);
-    } finally {
-      setLoading(false); // Set loading to false after authentication check
     }
   };
-  useEffect(() => {
-    authenticateUser();
-  }, []);
 
   return (
-    <>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
         <>
           <ToastContainer stacked={true} />
           <BrowserRouter>
@@ -236,8 +226,6 @@ function App() {
               />
             </Routes>
           </BrowserRouter>
-        </>
-      )}
     </>
   );
 }
