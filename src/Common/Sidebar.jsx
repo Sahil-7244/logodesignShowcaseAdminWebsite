@@ -297,12 +297,12 @@ function Sidebar() {
                 </Link>
               </li> */}
 
-              <li className="sidebar-item">
+              {/* <li className="sidebar-item">
                 <Link onClick={handleLogout} className="sidebar-link">
                   <i className="bi bi-box-arrow-left"></i>
                   <span>Logout</span>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
