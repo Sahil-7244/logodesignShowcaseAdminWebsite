@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Common/Header";
 import Sidebar from "../Common/Sidebar";
 import axios from "axios";
@@ -11,6 +11,8 @@ function EditContactDetails() {
     email: "",
     phone: "",
   });
+  const [loading, setLoading] = useState(true);
+  const [updateLoading, setUpdateLoading] = useState(false);
   const navigate = useNavigate();
   const maxLength = 100;
 
@@ -25,6 +27,7 @@ function EditContactDetails() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setUpdateLoading(true);
       const response = await axios.post(
         `${process.env.REACT_APP_SITEURL}/admin/editContact`,
         data
@@ -44,8 +47,36 @@ function EditContactDetails() {
       toast.error(error.response.data.message, {
         autoClose: 1500,
       });
+    }finally {
+      setUpdateLoading(false);
     }
   };
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.post(`${process.env.REACT_APP_SITEURL}/user/getContactDetail`);
+      setData(response.data.contactDetail?.[0] || {address: "",
+          email: "",
+          phone: "",
+        });
+    } catch (error) {
+      console.error("Error fetching contactDetail:", error);
+      setData(
+        {address: "",
+          email: "",
+          phone: "",
+        }
+       );
+    }finally {
+      setLoading(false);
+    }
+  };
+  
+  useEffect(() => {
+      
+          fetchData();
+        }, []);
 
   return (
     <>
@@ -59,7 +90,7 @@ function EditContactDetails() {
           <div className="page-content">
             <div className="row">
               <div className="col-12">
-                <div className="card">
+                {loading ? <div>loading...</div> : <div className="card">
                   <div className="card-content">
                     <form
                       className="card-body"
@@ -133,12 +164,13 @@ function EditContactDetails() {
                       <button
                         type="submit"
                         className="btn btn-primary mt-5 w-50 d-block mx-auto"
+                        disabled={updateLoading}
                       >
-                        Update
+                        {updateLoading ? "Updating..." : "Update"}
                       </button>
                     </form>
                   </div>
-                </div>
+                </div>}
               </div>
             </div>
           </div>
