@@ -68,15 +68,15 @@ function Home() {
                               <div className="row">
                                 <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
                                   <div className="stats-icon blue mb-2">
-                                    <i className="iconly-category" />
+                                    <i className="iconly-boldCategory" />
                                   </div>
                                 </div>
                                 <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                   <h6 className="text-muted font-semibold">
-                                    Enquiries
+                                    Banner
                                   </h6>
                                   <h6 className="font-extrabold mb-0">
-                                    {data.totalEnquiryCount}
+                                    {data.totalBannerCount}
                                   </h6>
                                 </div>
                               </div>
@@ -89,15 +89,15 @@ function Home() {
                               <div className="row">
                                 <div className="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
                                   <div className="stats-icon green mb-2">
-                                    <i className="iconly-boldAdd-User" />
+                                    <i className="iconly-boldImage" />
                                   </div>
                                 </div>
                                 <div className="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                   <h6 className="text-muted font-semibold">
-                                    Contact Us Data
+                                    Carousel Image
                                   </h6>
                                   <h6 className="font-extrabold mb-0">
-                                    {data.totalContactCount}
+                                    {data.totalCarouselImageCount}
                                   </h6>
                                 </div>
                               </div>

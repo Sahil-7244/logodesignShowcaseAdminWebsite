@@ -242,28 +242,6 @@ function Sidebar() {
               </li>
               <li
                 className="sidebar-item has-sub"
-                onClick={() => dropdownHandler("team-menu")}
-              >
-                <Link className="sidebar-link">
-                  <i class="bi bi-tags-fill"></i>
-
-                  <span>Team</span>
-                </Link>
-                <ul id="team-menu" className="submenu">
-                  <li className="submenu-item">
-                    <Link to="/addteam" className="submenu-link">
-                      Add Team member
-                    </Link>
-                  </li>
-                  <li className="submenu-item">
-                    <Link to="/viewteam" className="submenu-link">
-                      View Team
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li
-                className="sidebar-item has-sub"
                 onClick={() => dropdownHandler("exp-menu")}
               >
                 <Link className="sidebar-link">
