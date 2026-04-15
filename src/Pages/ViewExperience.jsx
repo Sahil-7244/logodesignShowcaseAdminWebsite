@@ -10,7 +10,7 @@ function ViewExperience() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`https://logodesignshowcasebackend-5.onrender.com/getexperience`);
+      const response = await axios.get(`${process.env.REACT_APP_SITEURL}/getexperience`);
       setData(response.data.experience);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -25,7 +25,7 @@ function ViewExperience() {
 
   const handleDelete = async (experienceId) => {
     try {
-      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/admin/deleteexperience`, {
+      await axios.post(`${process.env.REACT_APP_SITEURL}/admin/deleteexperience`, {
         experienceId
       });
       toast.success("team member Deleted Successfully!!", {

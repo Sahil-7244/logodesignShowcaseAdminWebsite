@@ -46,7 +46,7 @@ function AddTeam() {
     }
     try {
       const response = await axios.post(
-        `https://logodesignshowcasebackend-5.onrender.com/admin/addteam`,
+        `${process.env.REACT_APP_SITEURL}/admin/addteam`,
         formData
       );
       if (response.data.success) {

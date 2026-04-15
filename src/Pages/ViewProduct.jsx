@@ -19,7 +19,7 @@ function ViewProduct() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://logodesignshowcasebackend-5.onrender.com/user/getproducts`
+        `${process.env.REACT_APP_SITEURL}/user/getproducts`
       );
       setData(response.data.products);
 
@@ -38,7 +38,7 @@ function ViewProduct() {
 
   const handleDelete = async (productId) => {
     try {
-      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/admin/deleteProducts`, {
+      await axios.post(`${process.env.REACT_APP_SITEURL}/admin/deleteProducts`, {
         productId,
       });
       toast.success("Product Deleted Successfully!!", {

@@ -46,7 +46,7 @@ function EditCarouselImg() {
     }
     try {
       const response = await axios.post(
-        `https://logodesignshowcasebackend-5.onrender.com/admin/editCarouselImg`,
+        `${process.env.REACT_APP_SITEURL}/admin/editCarouselImg`,
         formData
       );
       if (response.data.success) {

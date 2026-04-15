@@ -38,7 +38,7 @@ function ContactUs() {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        `https://logodesignshowcasebackend-5.onrender.com/admin/getContactUs`
+        `${process.env.REACT_APP_SITEURL}/admin/getContactUs`
       );
       setRecords(response.data.contactUs);
       setOriginalData(response.data.contactUs);

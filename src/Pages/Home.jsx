@@ -11,7 +11,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .post(`https://logodesignshowcasebackend-5.onrender.com/admin/getCounts`)
+      .post(`${process.env.REACT_APP_SITEURL}/admin/getCounts`, {}, { withCredentials: true })
       .then((res) => {
         setData(res.data);
         setLoading(false); // Set loading to false after data is fetched

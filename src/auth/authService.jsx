@@ -7,7 +7,7 @@ axios.defaults.withCredentials = true;
 const checkSession = async () => {
   try {
     // console.log("Logging");
-    await axios.post(`https://logodesignshowcasebackend-5.onrender.com/session`,{},{withCredentials: true});
+    await axios.post(`${process.env.REACT_APP_SITEURL}/session`,{},{withCredentials: true});
     return true; // Session is valid
   } catch (error) {
     console.log("Session check failedddd: ", error);

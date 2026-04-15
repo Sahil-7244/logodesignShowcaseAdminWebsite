@@ -10,7 +10,7 @@ function ViewTeam() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`https://logodesignshowcasebackend-5.onrender.com/viewTeam`);
+      const response = await axios.get(`${process.env.REACT_APP_SITEURL}/viewTeam`);
       setData(response.data.team);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -25,7 +25,7 @@ function ViewTeam() {
 
   const handleDelete = async (teammemberId) => {
     try {
-      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/admin/deleteteam`, {
+      await axios.post(`${process.env.REACT_APP_SITEURL}/admin/deleteteam`, {
         teammemberId
       });
       toast.success("team member Deleted Successfully!!", {

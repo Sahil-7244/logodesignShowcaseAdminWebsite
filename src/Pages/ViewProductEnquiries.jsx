@@ -41,7 +41,7 @@ function ViewProductEnquiries() {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        `https://logodesignshowcasebackend-5.onrender.com/admin/getEnquiries`,
+        `${process.env.REACT_APP_SITEURL}/admin/getEnquiries`,
         {
           productId: product._id,
         }

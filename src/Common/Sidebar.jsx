@@ -35,7 +35,7 @@ function Sidebar() {
 
   const handleLogout = async () => {
     try {
-      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/logout`);
+      await axios.post(`${process.env.REACT_APP_SITEURL}/logout`);
       window.location.reload();
     } catch (error) {
       toast.error(error.response.data.message, {

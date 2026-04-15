@@ -30,7 +30,7 @@ function EditExperience() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `https://logodesignshowcasebackend-5.onrender.com/admin/editexperience`,
+        `${process.env.REACT_APP_SITEURL}/admin/editexperience`,
         data
       );
       if (response.data.success) {

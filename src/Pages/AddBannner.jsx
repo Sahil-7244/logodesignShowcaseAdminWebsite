@@ -46,7 +46,7 @@ function AddBanner() {
     }
     try {
       const response = await axios.post(
-        `https://logodesignshowcasebackend-5.onrender.com/admin/addBanner`,
+        `${process.env.REACT_APP_SITEURL}/admin/addBanner`,
         formData
       );
       if (response.data.success) {

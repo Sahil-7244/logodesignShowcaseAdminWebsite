@@ -8,6 +8,7 @@ function Login(props) {
     email: "",
     password: ""
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +22,8 @@ function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/user/login`, data, { withCredentials: true });
+      setLoading(true);
+      await axios.post(`${process.env.REACT_APP_SITEURL}/user/login`, data, { withCredentials: true });
       toast.success("Login Succesfully!!", {
         autoClose: 1500,
        onClose: () => props.setIsAuthenticated(true)
@@ -33,6 +35,8 @@ function Login(props) {
       toast.error(error.response.data.message, {
         autoClose: 1500,
       });
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -83,8 +87,9 @@ function Login(props) {
                 <button
                   type="submit"
                   className="btn btn-primary btn-block btn-lg shadow-lg mt-3"
+                  disabled={loading}
                 >
-                  Log in
+                  {loading ? "Logging in..." : "Log in"}
                 </button>
               </form>
             </div>

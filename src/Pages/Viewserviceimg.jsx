@@ -10,7 +10,7 @@ function ViewServiceImg() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post(`https://logodesignshowcasebackend-5.onrender.com/viewServiceImg`);
+      const response = await axios.post(`${process.env.REACT_APP_SITEURL}/viewServiceImg`);
       setData(response.data.serviceImg);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
@@ -25,7 +25,7 @@ function ViewServiceImg() {
 
   const handleDelete = async (serviceImgId) => {
     try {
-      await axios.post(`https://logodesignshowcasebackend-5.onrender.com/admin/deleteserviceImg`, {
+      await axios.post(`${process.env.REACT_APP_SITEURL}/admin/deleteserviceImg`, {
         serviceImgId
       });
       toast.success("serviceImg Deleted Successfully!!", {
